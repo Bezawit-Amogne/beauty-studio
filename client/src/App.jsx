@@ -433,7 +433,7 @@ function App() {
       date: form.date,
     };
 
-    const response = await fetch('http://localhost:5000/appointments', {
+   const response = await fetch('https://beauty-studio-production.up.railway.app/appointments', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
