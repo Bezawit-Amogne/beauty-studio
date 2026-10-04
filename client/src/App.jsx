@@ -5,28 +5,32 @@ const services = [
   {
     icon: 'Hair',
     title: 'Hair Styling',
-    description: 'Elegant cuts, styling, and finishing touches for every occasion.',
+    description:
+      'Elegant cuts, styling, and finishing touches for every occasion.',
     image:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4zTWrgvuRfsu3K7vzO2qDn_yO0O3XpJ9zBvA_7GqeyNiMixyayEVtxZAx&s=10',
   },
   {
     icon: 'Braids',
     title: 'Braiding',
-    description: 'Creative, modern braiding looks designed to last and stand out.',
+    description:
+      'Creative, modern braiding looks designed to last and stand out.',
     image:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzGaxB86AY5wWz5K5JVgArMPOmZTuin4zhcg_MObA54A&s=10',
   },
   {
     icon: 'Bridal',
     title: 'Wedding Hair',
-    description: 'Soft glam and bridal styling that feels special and timeless.',
+    description:
+      'Soft glam and bridal styling that feels special and timeless.',
     image:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVvWei97vz7U-XE7CpDmdo2L2k8j09lkGhIhpd2tYRMQ&s=10',
   },
   {
     icon: 'Care',
     title: 'Hair Care',
-    description: 'Nourishing treatments and healthy hair care routines for shine.',
+    description:
+      'Nourishing treatments and healthy hair care routines for shine.',
     image:
       'https://www.adeldirect.co.uk/blog/wp-content/uploads/2024/02/professional-haircare-blog-1.jpg',
   },
@@ -56,19 +60,22 @@ const products = [
 const rentals = [
   {
     title: 'Bridal Styling Kit',
-    details: 'Includes accessories, pins, and finishing tools for polished styling.',
+    details:
+      'Includes accessories, pins, and finishing tools for polished styling.',
     image:
       'https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=80',
   },
   {
     title: 'Event Hair Set',
-    details: 'Perfect for special events, with flexible styling options and care support.',
+    details:
+      'Perfect for special events, with flexible styling options and care support.',
     image:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGCSMibcatawgSleKhP0CzQ6oNR6Sbsa9yeElfpC_jAObxuQ_-GAjOi9I_&s=10',
   },
   {
     title: 'Beauty Station Bundle',
-    details: 'A complete styling bundle for salon prep and client-ready finishing.',
+    details:
+      'A complete styling bundle for salon prep and client-ready finishing.',
     image:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmFdccTQXNV7cbZL15SYaOC_oTRBy-tQDGRvtzzycHwwA8V_BcPxv0hV98&s=10',
   },
@@ -102,11 +109,21 @@ function Navbar({ menuOpen, setMenuOpen }) {
         </button>
 
         <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
-          <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
-          <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
-          <a href="#shop" onClick={() => setMenuOpen(false)}>Shop</a>
-          <a href="#gallery" onClick={() => setMenuOpen(false)}>Gallery</a>
-          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+          <a href="#home" onClick={() => setMenuOpen(false)}>
+            Home
+          </a>
+          <a href="#services" onClick={() => setMenuOpen(false)}>
+            Services
+          </a>
+          <a href="#shop" onClick={() => setMenuOpen(false)}>
+            Shop
+          </a>
+          <a href="#gallery" onClick={() => setMenuOpen(false)}>
+            Gallery
+          </a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>
+            Contact
+          </a>
         </nav>
       </div>
     </header>
@@ -119,16 +136,23 @@ function Hero({ onBookClick }) {
       <div className="container hero-grid">
         <div className="hero-copy">
           <p className="eyebrow">Luxury Hair & Beauty Studio</p>
+
           <h1>Beautiful Hair, Beautiful You</h1>
+
           <p className="hero-text">
-            Discover polished looks, healthy hair care, and signature styling for
-            everyday confidence and special moments.
+            Discover polished looks, healthy hair care, and signature styling
+            for everyday confidence and special moments.
           </p>
 
           <div className="cta-row">
-            <button type="button" className="primary-button" onClick={onBookClick}>
+            <button
+              type="button"
+              className="primary-button"
+              onClick={onBookClick}
+            >
               Book Appointment
             </button>
+
             <a href="#services" className="secondary-button">
               Explore Services
             </a>
@@ -139,10 +163,12 @@ function Hero({ onBookClick }) {
               <strong>5+</strong>
               <span>Years of styling</span>
             </div>
+
             <div>
               <strong>2k+</strong>
               <span>Happy clients</span>
             </div>
+
             <div>
               <strong>24/7</strong>
               <span>Booking support</span>
@@ -152,7 +178,11 @@ function Hero({ onBookClick }) {
 
         <div className="hero-visual" aria-label="Beauty salon portrait">
           <div className="portrait-card">
-            <img src={heroModelImage} alt="Beauty model with styled hair" />
+            <img
+              src={heroModelImage}
+              alt="Beauty model with styled hair"
+            />
+
             <div className="floating-badge">
               <span>Signature Look</span>
               <strong>Modern Beauty</strong>
@@ -176,10 +206,17 @@ function Services() {
         <div className="cards-grid three-up service-grid">
           {services.map((service) => (
             <article key={service.title} className="service-card">
-              <img src={service.image} alt={service.title} className="service-image" />
+              <img
+                src={service.image}
+                alt={service.title}
+                className="service-image"
+              />
+
               <div className="service-content">
                 <div className="icon-circle">{service.icon}</div>
+
                 <h3>{service.title}</h3>
+
                 <p>{service.description}</p>
               </div>
             </article>
@@ -203,6 +240,7 @@ function BeautyShop() {
           {products.map((product) => (
             <article key={product.name} className="product-card">
               <img src={product.image} alt={product.name} />
+
               <div className="card-body">
                 <h3>{product.name}</h3>
                 <p>{product.price}</p>
@@ -227,7 +265,12 @@ function Rental() {
         <div className="cards-grid three-up">
           {rentals.map((item) => (
             <article key={item.title} className="rental-card">
-              <img src={item.image} alt={item.title} className="rental-image" />
+              <img
+                src={item.image}
+                alt={item.title}
+                className="rental-image"
+              />
+
               <div className="rental-content">
                 <h3>{item.title}</h3>
                 <p>{item.details}</p>
@@ -246,20 +289,25 @@ function Bridal() {
       <div className="container bridal-layout">
         <div>
           <p className="eyebrow">Bridal Beauty</p>
+
           <h2>Soft glam for your most memorable day</h2>
+
           <p>
-            From elegant bridal styling to polished finishing details, we help you
-            feel beautiful, confident, and camera-ready.
+            From elegant bridal styling to polished finishing details, we help
+            you feel beautiful, confident, and camera-ready.
           </p>
         </div>
 
         <div className="bridal-card">
           <img
-https://images.squarespace-cdn.com/content/v1/61ab7f28daafc31fda51e058/951fb4ff-e676-441a-bc5b-aac67476b19e/bshowemail1.jpeg?utm_source=chatgpt.com            alt="Bride in bridal dress with makeup and styled hair"
+            src="https://images.squarespace-cdn.com/content/v1/61ab7f28daafc31fda51e058/951fb4ff-e676-441a-bc5b-aac67476b19e/bshowemail1.jpeg?utm_source=chatgpt.com"
+            alt="Bride in bridal dress with makeup and styled hair"
             className="bridal-image"
           />
+
           <span>Bridal Packages</span>
           <strong>Custom styling plans</strong>
+
           <p>Perfect for weddings, engagements, and special events.</p>
         </div>
       </div>
@@ -279,7 +327,10 @@ function Gallery() {
         <div className="gallery-grid">
           {gallery.map((image, index) => (
             <div key={index} className="gallery-item">
-              <img src={image} alt={`Beauty studio look ${index + 1}`} />
+              <img
+                src={image}
+                alt={`Beauty studio look ${index + 1}`}
+              />
             </div>
           ))}
         </div>
@@ -290,7 +341,9 @@ function Gallery() {
 
 function AppointmentForm({ form, setForm, onSubmit, onClose }) {
   const today = new Date();
+
   today.setHours(0, 0, 0, 0);
+
   const minDate = today.toISOString().split('T')[0];
 
   const handleChange = (event) => {
@@ -298,30 +351,52 @@ function AppointmentForm({ form, setForm, onSubmit, onClose }) {
 
     if (name === 'name') {
       const nextValue = value.replace(/[^A-Za-z ]/g, '');
-      setForm((prev) => ({ ...prev, [name]: nextValue }));
+
+      setForm((prev) => ({
+        ...prev,
+        [name]: nextValue,
+      }));
+
       return;
     }
 
     if (name === 'phone') {
       const nextValue = value.replace(/\D/g, '');
-      setForm((prev) => ({ ...prev, [name]: nextValue }));
+
+      setForm((prev) => ({
+        ...prev,
+        [name]: nextValue,
+      }));
+
       return;
     }
 
     if (name === 'date') {
       if (!value) {
-        setForm((prev) => ({ ...prev, [name]: value }));
+        setForm((prev) => ({
+          ...prev,
+          [name]: value,
+        }));
+
         return;
       }
 
       const selectedDate = new Date(`${value}T00:00:00`);
+
       if (selectedDate >= today) {
-        setForm((prev) => ({ ...prev, [name]: value }));
+        setForm((prev) => ({
+          ...prev,
+          [name]: value,
+        }));
       }
+
       return;
     }
 
-    setForm((prev) => ({ ...prev, [name]: value }));
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   return (
@@ -329,7 +404,12 @@ function AppointmentForm({ form, setForm, onSubmit, onClose }) {
       <div className="appointment-form">
         <div className="form-header">
           <h2>Book Your Appointment</h2>
-          <button type="button" className="close-button" onClick={onClose}>
+
+          <button
+            type="button"
+            className="close-button"
+            onClick={onClose}
+          >
             ×
           </button>
         </div>
@@ -353,7 +433,12 @@ function AppointmentForm({ form, setForm, onSubmit, onClose }) {
             required
           />
 
-          <select name="hairstyle" value={form.hairstyle} onChange={handleChange} required>
+          <select
+            name="hairstyle"
+            value={form.hairstyle}
+            onChange={handleChange}
+            required
+          >
             <option value="">Select Service</option>
             <option value="Hair Styling">Hair Styling</option>
             <option value="Braiding">Braiding</option>
@@ -374,7 +459,10 @@ function AppointmentForm({ form, setForm, onSubmit, onClose }) {
             required
           />
 
-          <button type="submit" className="primary-button submit-button">
+          <button
+            type="submit"
+            className="primary-button submit-button"
+          >
             Submit Appointment
           </button>
         </form>
@@ -395,7 +483,7 @@ function Contact() {
         <div className="contact-info">
           <p>Phone: +251 923514021</p>
           <p>Location: Ethiopia</p>
-          <p>Email:bezaamogne@gmail.com</p>
+          <p>Email: bezaamogne@gmail.com</p>
         </div>
       </div>
     </section>
@@ -416,6 +504,7 @@ function Footer() {
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showForm, setShowForm] = useState(false);
+
   const [form, setForm] = useState({
     name: '',
     phone: '',
@@ -433,32 +522,64 @@ function App() {
       date: form.date,
     };
 
-   const response = await fetch('https://beauty-studio-production.up.railway.app/appointments', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(appointment),
-    });
+    try {
+      const response = await fetch(
+        'https://beauty-studio-production.up.railway.app/appointments',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(appointment),
+        }
+      );
 
-    const data = await response.json();
+      const data = await response.json();
 
-    alert(data.message);
-    setForm({ name: '', phone: '', hairstyle: '', date: '' });
-    setShowForm(false);
+      if (!response.ok) {
+        alert(data.message || 'Failed to book appointment.');
+        return;
+      }
+
+      alert(data.message || 'Appointment booked successfully!');
+
+      setForm({
+        name: '',
+        phone: '',
+        hairstyle: '',
+        date: '',
+      });
+
+      setShowForm(false);
+    } catch (error) {
+      console.error('Appointment submission error:', error);
+
+      alert(
+        'Unable to connect to the server. Please check your internet connection and try again.'
+      );
+    }
   };
 
   return (
     <div className="page-shell">
-      <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Navbar
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
+      />
 
       <main>
         <Hero onBookClick={() => setShowForm(true)} />
+
         <Services />
+
         <BeautyShop />
+
         <Rental />
+
         <Bridal />
+
         <Gallery />
+
         <Contact />
       </main>
 
