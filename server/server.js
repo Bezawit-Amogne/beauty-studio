@@ -1,4 +1,3 @@
-
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
@@ -29,7 +28,6 @@ db.getConnection((err, connection) => {
 
     console.log('MySQL connected successfully');
 
-    // Release the test connection back to the pool
     connection.release();
 });
 
@@ -73,4 +71,11 @@ app.post('/appointments', (req, res) => {
             });
         }
     );
+});
+
+// Start server
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server running on port ${PORT}`);
 });
