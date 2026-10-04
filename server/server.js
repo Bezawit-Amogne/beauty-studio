@@ -1,3 +1,4 @@
+
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
@@ -8,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// MySQL connection
+// MySQL connection pool
 const db = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -19,14 +20,17 @@ const db = mysql.createPool({
     queueLimit: 0
 });
 
-// Connect to MySQL
-db.connect((err) => {
+// Test MySQL connection
+db.getConnection((err, connection) => {
     if (err) {
         console.error('MySQL connection failed:', err);
         return;
     }
 
     console.log('MySQL connected successfully');
+
+    // Release the test connection back to the pool
+    connection.release();
 });
 
 // Test route
@@ -69,11 +73,4 @@ app.post('/appointments', (req, res) => {
             });
         }
     );
-});
-
-// Start server
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
 });
